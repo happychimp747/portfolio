@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ye Wang</title>
+    <link rel="stylesheet" type="text/css"
+          href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"
+          href="css/index.css">
+    <link rel="stylesheet" type="text/css"
+          href="css/iterative-design.css">
+    <script src="./js/jquery-3.2.1.slim.min.js"
+    ></script>
+    <script src="./js/popper.min.js"
+    ></script>
+    <script src="./js/bootstrap.min.js"
+    ></script>
+</head>
+<!-- TODO: carousel at the bottom -->
+<body>
+<div class="banner-bar">
+    <br>
+    <a href="./index.html" class="header_name"><h2>Anonymous
+        Chimp</h2></a>
+    <h3>A student exploring all aspects of user interface
+        design and research,
+        currently at Brown. </h3>
+    <br>
+
+    <ul class="nav">
+        <li class="nav-button"><a
+                href="./index.html">Work</a></li>
+        <li class="nav-button"><a
+                href="./about.html">About</a>
+        </li>
+    </ul>
+</div>
+<div class=" main-contents proj-page-contents"
+     id="top-element">
+    <section>
+        <h1>React App</h1>
+        <p>Have you ever dreamed about traveling the world
+            and working remotely at the same time? This is
+            an interactive
+            app to help figure out the visa issues for
+            a year-long staycation across
+            the world.
+        </p>
+    </section>
+
+    <section>
+        <div class="portfolio-main-card">
+            <a class="link-in-project"
+               href="https://happychimp747.github.io/react-proj/"
+               target="_blank" rel="noopener noreferrer">
+                <div><h5>View the Deployed App! &#8595;</h5></div>
+                <img class="main-img portfolio-main-img" ,
+                     src="./images/react_main.png">
+            </a>
+        </div>
+
+        <!--                <div class="main-img background_norepeat"-->
+        <!--                     style="background-image: url('./images/react_main.png')">-->
+        <!--                </div>-->
+
+    </section>
+
+    <section>
+        <h3>Context</h3>
+
+        <p> There
+            are
+            a number of countries that offer digital nomad
+            visas,
+            which legitimately allows travellers to work
+            online. As an exercise to build React apps, I
+            chose
+            to
+            aggregate basic information on these countries
+            and their visa offerings.</p>
+    </section>
+
+    <section>
+
+        <div section-contents>
+
+            <div class="design-step">
+                <h3>Problem Statement</h3>
+                <ul>
+                    <li>Enable users to find destinations by
+                        the
+                        top activities a country provides,
+                        for instance,
+                        outdoors activities.
+                    </li>
+                    <li>Users should be able to sort based
+                        on
+                        longest visa duration, since some
+                        users
+                        plan to stay in only one country.
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="design-step">
+                <h3>Usability Oriented Design</h3>
+                <p>Visually, country names and pictures are
+                    most important and therefore prominent
+                    features of the app.
+
+                    Users will have the option to see the
+                    country offering the longest visa first
+                    or to see the country with lowest visa
+                    fee first. This is intended to match
+                    user expectations as they explore
+                    different destinations.
+
+                    An aggregator lets the users know which
+                    categories have been chosen. This status
+                    helps guide users find new features to
+                    add their trips.
+
+                    The checkboxes use "AND" operations.
+                    This choice matches user's expectations
+                    that certain countries may provide more
+                    than one feature.</p>
+            </div>
+
+            <div class="design-step">
+                <h3>Organization of Components</h3>
+                <p>Each country is shown via a MainItem
+                    component in MainItem.jsx. Information
+                    for each item is held in
+                    assets/main-data.json.
+
+                    An Aggregator.jsx component shows the
+                    aggregated information. Aggregated
+                    values are passed in as props.</p>
+            </div>
+
+            <div class="design-step">
+                <h3>How Data is Passed Down Through
+                    Components</h3>
+                <p>A dictionary for each item is passed as
+                    item prop to the component through a
+                    mapping operation from the filteredItem
+                    state.</p>
+                <p>In addition, all filtering and sorting
+                    information is also held in assets, and
+                    then passed into HTML elements through a
+                    similar mechanism.
+                </p>
+            </div>
+
+            <div class="design-step">
+                <h3>How the User Triggers State Changes</h3>
+                <p>When the user checks on different
+                    features a country provides, checkedCats
+                    is updated accordingly. It tracks the
+                    categories shown in the app. At the same
+                    time, filteredItems updates to include
+                    all items selected. When none of the
+                    categories are checked, filteredItems
+                    include all items in the dataset.</p>
+
+                <p>`Sortkey` variable updates when a user
+                    selects a sorting method, resetting the
+                    sequence of items displayed
+                </p>
+
+                <p>
+                    When the user selects their favorite
+                    countries, selectedItems updates to
+                    reflect the countries chosen. In turn,
+                    the "Favorite countries" section
+                    aggregates properties of these selected
+                    items and shows them. At the same time,
+                    a selectedStatus state updates to
+                    reflect whether the MainItem component
+                    shows the "Add to your trip" or the
+                    "Remove" button.
+                </p>
+            </div>
+
+        </div>
+
+        <section>
+            <h3>Further Work</h3>
+
+            <p>Because this app is largely based on my own
+                travel planning needs, I plan to perform evaluations
+                to observe how other users use this app, potentially by
+                using
+                usertesting.com.</p>
+        </section>
+    </section>
+
+    <section class="nav-bottom">
+        <a class="nav-bottom-button" href="#top-element"
+           style="margin-right: 7px"
+        >Back to top &#8593;</a>
+
+        <a class="nav-bottom-button"
+           href="./personas.html">Go back to my first project
+            &#8634;</a>
+    </section>
+
+    <section class="empty"></section>
+</div>
+
+</body>
+</html>
